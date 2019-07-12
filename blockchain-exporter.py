@@ -25,6 +25,7 @@ class BlockchainCollector:
     def __init__(self):
         self.settings = {
             'addresses': os.environ.get("ADDRESSES", '').split(','),
+            'url': os.environ.get('URL', 'https://blockchain.info'),
         }
 
     def get_balance(self):
