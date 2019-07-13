@@ -5,7 +5,7 @@ ENV LOGLEVEL=INFO
 
 RUN pip3 install requests
 
-COPY blockchain-exporter.py /
+COPY src/blockchain-exporter.py /
 
 EXPOSE 9308
 
