@@ -1,5 +1,4 @@
-FROM hub.ix.ai/docker/alpine:latest
-LABEL ai.ix.maintainer="docker@ix.ai"
+FROM registry.gitlab.com/ix.ai/alpine:latest
 ARG PORT
 
 ENV LOGLEVEL=INFO PORT=${PORT}
