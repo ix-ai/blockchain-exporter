@@ -8,7 +8,7 @@ docker run --rm -it -p 9399:9399 \
   -e LOGLEVEL=DEBUG \
   -e PORT=9399 \
   --name blockchain-exporter \
-  hub.ix.ai/docker/blockchain-exporter:latest
+  registry.gitlab.com/ix.ai/blockchain-exporter:latest
 ```
 
 ## Supported variables
