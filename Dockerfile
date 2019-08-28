@@ -1,11 +1,14 @@
-FROM registry.gitlab.com/ix.ai/alpine:latest
-LABEL MAINTAINER="docker@ix.ai"
+FROM alpine:latest
+LABEL maintainer="docker@ix.ai"
 
-ARG PORT
+ARG PORT=9308
+ARG LOGLEVEL=INFO
 
-ENV LOGLEVEL=INFO PORT=${PORT}
+RUN apk --no-cache upgrade && \
+    apk --no-cache add python3 gcc musl-dev && \
+    pip3 install --no-cache-dir prometheus_client pygelf requests
 
-RUN pip3 install --no-cache-dir requests
+ENV LOGLEVEL=${LOGLEVEL} PORT=${PORT}
 
 COPY src/blockchain-exporter.py /
 
