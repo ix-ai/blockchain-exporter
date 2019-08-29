@@ -1,0 +1,3 @@
+pygelf
+prometheus_client
+requests
