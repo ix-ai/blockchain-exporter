@@ -43,5 +43,5 @@ Starting with version v0.4.0, the images are multi-arch, with builds for amd64, 
 
 ## Resources:
 * GitLab: https://gitlab.com/ix.ai/blockchain-exporter
-* GitLab: https://github.com/ix-ai/blockchain-exporter
+* GitHub: https://github.com/ix-ai/blockchain-exporter
 * Docker Hub: https://hub.docker.com/r/ixdotai/blockchain-exporter
