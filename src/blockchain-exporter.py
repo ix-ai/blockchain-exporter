@@ -9,6 +9,7 @@ import requests
 import pygelf
 from prometheus_client import start_http_server
 from prometheus_client.core import REGISTRY, GaugeMetricFamily
+import constants
 
 LOG = logging.getLogger(__name__)
 logging.basicConfig(
@@ -117,9 +118,10 @@ class BlockchainCollector:
 
 if __name__ == '__main__':
     configure_logging()
-    PORT = int(os.environ.get('PORT', 9308))
-    LOG.info("Starting on port {}".format(PORT))
+    port = int(os.environ.get('PORT', 9308))
+    # pylint: disable=no-member
+    LOG.info("Starting blockchain-exporter {}, listening on port {}".format(constants.VERSION, port))
     REGISTRY.register(BlockchainCollector())
-    start_http_server(PORT)
+    start_http_server(port)
     while True:
         time.sleep(1)
