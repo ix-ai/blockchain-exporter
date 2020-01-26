@@ -1,14 +1,14 @@
 FROM alpine:latest
-LABEL maintainer="docker@ix.ai"
+LABEL maintainer="docker@ix.ai" \
+      ai.ix.repository="ix.ai/blockchain-exporter"
 
 WORKDIR /app
 
 COPY src/ /app
 
 RUN apk --no-cache upgrade && \
-    apk --no-cache add python3 gcc musl-dev && \
-    pip3 install --no-cache-dir -r requirements.txt && \
-    apk del --no-cache --purge gcc musl-dev
+    apk --no-cache add python3 py3-pip py3-prometheus-client py3-requests && \
+    pip3 install --no-cache-dir -r requirements.txt
 
 EXPOSE 9308
 
