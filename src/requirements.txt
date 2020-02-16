@@ -1,3 +1,0 @@
-pygelf==0.3.6
-prometheus_client
-requests
